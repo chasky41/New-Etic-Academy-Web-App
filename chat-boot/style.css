@@ -1,0 +1,173 @@
+  /* Custom styles for the navbar */
+  .navbar {
+    background-color: #FFFFFF;
+    /* Background color */
+  }
+
+  .navbar-brand img {
+    width: 240px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+  }
+ 
+
+  .navbar-nav .nav-link {
+    color: #154A8B !important;
+    /* Text color */
+    transition: color 0.3s;
+    /* Smooth transition */
+    font-weight: bold;
+    /* Bold text */
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #F15B25 !important;
+    /* Change color on hover */
+  }
+
+  .navbar-nav-right .nav-link {
+    color: #154A8B !important;
+    /* Text color for the user icon */
+    transition: color 0.3s;
+    /* Smooth transition */
+    font-weight: bold;
+    /* Bold text */
+  }
+
+  .navbar-nav-right .nav-link:hover {
+    color: #F15B25 !important;
+    /* Change color on hover */
+  }
+
+  .navbar-nav-right .nav-link i {
+    border: 2px solid #154A8B;
+    /* Border color for the user icon */
+    border-radius: 50%;
+    /* Create a circular border */
+    padding: 4px;
+    /* Adjust padding as needed */
+    transition: border-color 0.3s;
+    /* Smooth transition */
+  }
+
+  .navbar-nav-right .nav-link i:hover {
+    border-color: #F15B25;
+    /* Change border color on hover */
+  }
+
+  /* Adjust styles for small screens */
+  @media (max-width: 767.98px) {
+    .navbar-nav .nav-link {
+      font-size: 14px;
+      /* Adjust the font size as needed */
+    }
+  }
+
+ 
+
+  footer {
+
+    background-color: #FFFFFF;
+    /* Light gray background */
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .footer-col {
+    margin-bottom: 20px;
+  }
+
+  .footer-col h4 {
+    color: #154A8B;
+    /* Text color */
+  }
+
+  .footer-col p {
+    color: #000;
+    /* Text color */
+  }
+
+  .footer-logo img {
+    max-width: 235px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-top: 35px;
+    /* Maintain aspect ratio */
+  }
+
+  .icon-container {
+    font-size: 24px;
+    /* Adjust the font size as needed */
+    margin-right: 8px;
+    /* Adjust the margin as needed */
+    color: #FFFFFF;
+    /* White color */
+  }
+
+  /* Ensure the fourth column doesn't collapse on small screens */
+  .fourth-column {
+    flex-wrap: nowrap;
+  }
+
+  .fourth-column img {
+    max-width: 235px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-bottom: 20px;
+    /* Adjust the margin as needed */
+  }
+
+  /* Custom color for phone and WhatsApp icons */
+  .phone-icon {
+    color: #1B93D0;
+  }
+
+  .whatsapp-icon {
+    color: #1B93D0;
+  }
+
+  /* Custom color for Gmail icon */
+  .gmail-icon {
+    color: #1B93D0;
+  }
+
+  /* Blue banner at the bottom */
+  .blue-banner {
+    background-color: #154A8B;
+    /* Blue color */
+    color: #FFFFFF;
+    /* Text color */
+    padding: 10px 0;
+    text-align: center;
+
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Social media icons */
+  .social-icons {
+    display: flex;
+    margin-left: auto;
+  }
+
+  @media (max-width: 767px) {
+    .footer-col {
+      text-align: center;
+    }
+
+    .fourth-column {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+  }

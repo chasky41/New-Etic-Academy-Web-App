@@ -1,0 +1,418 @@
+/* Custom styles for the navbar */
+.navbar {
+  background-color: #ffffff;
+  /* Background color */
+}
+
+.navbar-brand img {
+  width: 240px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+}
+
+.navbar-nav .nav-link {
+  color: #154a8b !important;
+  /* Text color */
+  transition: color 0.3s;
+  /* Smooth transition */
+  font-weight: bold;
+  /* Bold text */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f15b25 !important;
+  /* Change color on hover */
+}
+
+.navbar-nav-right .nav-link {
+  color: #154a8b !important;
+  /* Text color for the user icon */
+  transition: color 0.3s;
+  /* Smooth transition */
+  font-weight: bold;
+  /* Bold text */
+}
+
+.navbar-nav-right .nav-link:hover {
+  color: #f15b25 !important;
+  /* Change color on hover */
+}
+
+.navbar-nav-right .nav-link i {
+  border: 2px solid #154a8b;
+  /* Border color for the user icon */
+  border-radius: 50%;
+  /* Create a circular border */
+  padding: 4px;
+  /* Adjust padding as needed */
+  transition: border-color 0.3s;
+  /* Smooth transition */
+}
+
+.navbar-nav-right .nav-link i:hover {
+  border-color: #f15b25;
+  /* Change border color on hover */
+}
+
+/* Adjust styles for small screens */
+@media (max-width: 767.98px) {
+  .navbar-nav .nav-link {
+    font-size: 14px;
+    /* Adjust the font size as needed */
+  }
+}
+
+/*header */
+.header {
+  background-image: url("./img/header.png");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  /* Adjust the height as needed */
+}
+
+.sec1 h3 {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.sec1 li {
+  font-size: 18px;
+}
+
+.clr {
+  padding-left: 25px;
+  background-color: #622d8a;
+  border-top-right-radius: 110px;
+  border-bottom-right-radius: 110px;
+
+  width: 85%;
+  min-height: 200px;
+}
+
+.pl {
+  color: white;
+}
+
+.hp {
+  color: white;
+}
+
+.card .card-body {
+  background-color: #8bd2f0;
+}
+.card {
+  border: none;
+  min-height: 370px;
+  margin-bottom: 15px;
+}
+
+/*section 2*/
+.sec2 {
+  margin-top: 40px;
+}
+
+.sec2 h3 {
+  margin-top: 50px;
+  margin-bottom: 70px;
+  font-family: "Gill Sans", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  color: #144a8b;
+}
+
+.sec2 img {
+  width: 130px;
+}
+.sec2 table {
+  width: 350px;
+}
+.sec2 table td {
+  font-family: "Gill Sans", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+  padding-left: 20px;
+}
+
+.sec2 table td p {
+  margin-bottom: 9px;
+}
+
+.sec2 .h3 {
+  margin-top: 90px;
+}
+
+.sec2 .h3 h4 {
+  color: #2d64a6;
+  font-size: 30px;
+}
+
+.sec2 .h3 h5 {
+  color: #2d64a6;
+  font-size: 30px;
+}
+
+.imgc img {
+  height: 400px;
+}
+
+.side {
+  width: 40px;
+  height: 160px;
+  background-color: #622d8a;
+}
+
+.div {
+  overflow: auto;
+  align-items: center;
+  border-radius: 100px 100px 100px 100px;
+  height: 200px;
+  padding: 40px;
+  background-color: #672f91;
+}
+.all {
+  border: #b52766 solid 2px;
+  border-radius: 55px;
+}
+.program {
+  color: #b52766;
+
+  position: relative;
+  top: 33px;
+  font-size: 50px;
+}
+
+.sec6 {
+  margin-top: 40px;
+  background-color: #384a8a;
+  height: 500px;
+
+  background-image: url(./img/student.png);
+  background-repeat: no-repeat;
+  background-size: 600px;
+  background-position-x: right;
+}
+
+.sec6 h3 {
+  margin-top: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.sec6 h5 {
+  color: white;
+}
+
+.sec6 form {
+  margin-top: 15px;
+}
+
+.sec6 .form {
+  background-color: f9fafa;
+  padding: 6px 10px 15px 10px;
+  margin-top: 15px;
+  border: solid 1px #384a8a;
+  border-radius: 5px;
+}
+
+.sec6 p {
+  margin-top: 50px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sec6 .txt {
+  position: absolute;
+}
+
+.back {
+  background-image: url(./img/student.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -300px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .alexa {
+    position: relative;
+    top: 850px;
+    margin-bottom: 950px;
+  }
+
+  .back {
+    background-image: url(./img/student.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -580px;
+  }
+
+  .cadr .txt {
+    height: 200px;
+  }
+
+  .cadr .txt button {
+    position: absolute;
+    top: 160px;
+    right: 20px;
+    border: none;
+    background-color: rgb(255, 255, 255, 0.2);
+  }
+}
+
+section .title-h2 {
+  max-width: 800px;
+  background-color: #ffffff;
+  font-weight: bold;
+  font-size: 40px;
+  position: relative;
+  top: 30px;
+}
+
+.cadr {
+  padding-top: 100px;
+  padding-bottom: 60px;
+  width: 100%;
+  padding: auto;
+
+  justify-content: center;
+  align-items: center;
+  border: solid 2px rgb(66, 66, 202);
+  border-radius: 30px;
+}
+
+.cadr .txt {
+  padding-left: 50px;
+  padding-right: 10px;
+}
+
+.cadr .txt .h2 {
+  color: #1c4f91;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.cadr .txt p {
+  font-weight: bolder;
+}
+
+.cadr .txt button {
+  position: absolute;
+  right: 20px;
+  border: none;
+  background-color: rgb(255, 255, 255, 0.2);
+}
+
+/*.
+
+  /* footer */
+/* Custom styles for the footer */
+
+footer {
+  background-color: #ffffff;
+  /* Light gray background */
+  padding: 20px 0;
+  position: relative;
+}
+
+.footer-col {
+  margin-bottom: 20px;
+}
+
+.footer-col h4 {
+  color: #154a8b;
+  /* Text color */
+}
+
+.footer-col p {
+  color: #000;
+  /* Text color */
+}
+
+.footer-logo img {
+  max-width: 235px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+  margin-top: 35px;
+  /* Maintain aspect ratio */
+}
+
+.icon-container {
+  font-size: 24px;
+  /* Adjust the font size as needed */
+  margin-right: 8px;
+  /* Adjust the margin as needed */
+  color: #ffffff;
+  /* White color */
+}
+
+/* Ensure the fourth column doesn't collapse on small screens */
+.fourth-column {
+  flex-wrap: nowrap;
+}
+
+.fourth-column img {
+  max-width: 235px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+  margin-bottom: 20px;
+  /* Adjust the margin as needed */
+}
+
+/* Custom color for phone and WhatsApp icons */
+.phone-icon {
+  color: #1b93d0;
+}
+
+.whatsapp-icon {
+  color: #1b93d0;
+}
+
+/* Custom color for Gmail icon */
+.gmail-icon {
+  color: #1b93d0;
+}
+
+/* Blue banner at the bottom */
+.blue-banner {
+  background-color: #154a8b;
+  /* Blue color */
+  color: #ffffff;
+  /* Text color */
+  padding: 10px 0;
+  text-align: center;
+
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Social media icons */
+.social-icons {
+  display: flex;
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .footer-col {
+    text-align: center;
+  }
+
+  .fourth-column {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>site</title>
+
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS (for the user icon) -->
+    <!-- Bootstrap CSS pour le Carousel -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- script-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <!--navbar -->
+    <!--navbar -->
+    <style>
+        /* Incluez ici le CSS pour l'écran de chargement */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .loading-logo {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            color: #3498db;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-logo img {
+            animation: spin 2s linear infinite;
+        }
+
+/* Conteneur global */
+/* Conteneur global */
+.container {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Couleurs principales */
+.primary-color {
+    color: #0056b3; /* Bleu pastel */
+}
+
+.secondary-color {
+    color: #ff6f61; /* Rouge pastel */
+}
+
+.bg-primary {
+    background-color: #e0f0ff; /* Bleu très clair */
+    color: #0056b3;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bg-secondary {
+    background-color: #ffefef; /* Rouge très clair */
+    color: #ff6f61;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Titres */
+h2, h3, h5 {
+    color: #ffffff; /* Bleu pastel */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    font-size: xx-large;
+}
+
+/* Effets d'animation pour les titres */
+h2.animate, h3.animate, h5.animate {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Bloc de texte avec ombre au survol */
+.bg-primary, .bg-secondary, .form, .bttn, .contimg {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.bg-primary:hover, .bg-secondary:hover, .form:hover, .bttn:hover, .contimg:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+/* Images et conteneurs de texte */
+.img-container .col-md-2 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-container .col-md-2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Boutons */
+button {
+    background-color: #0056b3; /* Bleu pastel */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff2714; /* Rouge pastel */
+    transform: scale(1.05);
+}
+
+/* Liens */
+a {
+    color: #0056b3; /* Bleu pastel */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff2f1d; /* Rouge pastel */
+}
+
+/* Liste */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Formulaire */
+.form {
+    border: 1px solid #0056b3;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f7faff; /* Bleu très clair */
+}
+
+.form input[type="text"],
+.form input[type="email"] {
+    border: 1px solid #0056b3;
+    padding: 10px;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form input[type="text"]:focus,
+.form input[type="email"]:focus {
+    border-color: #ff6f61; /* Rouge pastel */
+}
+
+.img-container img {
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .img-container .col-md-4:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        .img-container .col-md-4:hover {
+            background: linear-gradient(135deg, rgba(0, 0, 255, 0.3), rgba(255, 0, 0, 0.3));
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        
+    </style>
+    <script>
+        // Fonction pour ajouter des animations à l'entrée de la page
+        document.addEventListener("DOMContentLoaded", function() {
+            // Effets de titre
+            const titles = document.querySelectorAll('h2, h3, h5');
+            titles.forEach((title, index) => {
+                setTimeout(() => {
+                    title.classList.add('animate');
+                }, 500 * index); // Délai d'animation pour chaque titre
+            });
+        
+            // Effets de message de félicitations
+            const congratulateMessage = document.createElement('div');
+            congratulateMessage.textContent = "🎉 Félicitations ! Merci pour visiter Notre page Diplome  ! 🎉";
+            congratulateMessage.style.position = 'fixed';
+            congratulateMessage.style.bottom = '20px';
+            congratulateMessage.style.right = '20px';
+            congratulateMessage.style.backgroundColor = '#e0f0ff'; /* Bleu clair */
+            congratulateMessage.style.color = '#0056b3'; /* Bleu pastel */
+            congratulateMessage.style.padding = '10px';
+            congratulateMessage.style.borderRadius = '5px';
+            congratulateMessage.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+            congratulateMessage.style.zIndex = '1000';
+            congratulateMessage.style.opacity = '0';
+            document.body.appendChild(congratulateMessage);
+        
+            // Animation du message de félicitations
+            setTimeout(() => {
+                congratulateMessage.style.opacity = '1';
+                setTimeout(() => {
+                    congratulateMessage.style.opacity = '0';
+                    setTimeout(() => {
+                        document.body.removeChild(congratulateMessage);
+                    }, 500);
+                }, 3000);
+            }, 1000);
+        });
+        </script>
+        
+</head>
+<body>
+    <!-- Votre barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand mr-4" href="../site/index.html">
+            <img src="./img/logo.png" alt="Your Logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../site/index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="../A propos/index.html">Etic Academy</a></li>
+                <li class="nav-item"><a class="nav-link" href="../pagexx/formation.html">Prés requis</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="etudiantDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Etudiant</a>
+                    <ul class="dropdown-menu" aria-labelledby="etudiantDropdown">
+                        <li><a class="dropdown-item" href="../commerce/index.html">Commerce</a></li>
+                        <li><a class="dropdown-item" href="../informatique/index.html">Informatique</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="../le menu/menu.html">Nos Formation</a></li>
+                <li class="nav-item"><a class="nav-link" href="../page-template/index.html">Diplome</a></li>
+                <li class="nav-item"><a class="nav-link" href="../contact/index.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="../Rendez-vous/rendezvous-eleves.php">Rendez-vous</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html">Login</a></li>
+            </ul>
+        
+            <!-- User icon on the right -->
+            <ul class="navbar-nav ms-auto navbar-nav-right">
+                <li class="nav-item"><a class="nav-link" href="../index.html"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </div> 
+    </nav>
+
+    <!-- Votre contenu principal -->
+
+    <!-- Écran de chargement -->
+    <div id="loadingScreen">
+        <div class="loading-logo">
+            <img src="../eticphoto.png" alt="Etic Academy Logo">
+        </div> <br><br>
+        <div class="loading-text"><b style="color: red;">Etic  <span style="color:blue;">Academy</span></b>  </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loadingScreen = document.getElementById("loadingScreen");
+
+            // Afficher l'écran de chargement
+            loadingScreen.style.display = "flex";
+
+            // Masquer l'écran de chargement après 5 secondes
+            setTimeout(function() {
+                loadingScreen.style.display = "none";
+            }, 1500); // Délai de 5 secondes
+        });
+    </script>
+    <!-- This is a header layout -->
+ 
+    <div class="container">
+        <div class="row img-container">
+            <div class="col-md-2">
+                <img src="./img/profil.png" class="img-fluid" alt="Photo 1">
+                <b>Prérequis</b>
+                <p>Niveau BAC</p>
+            </div>
+            <div class="col-md-2">
+                <img src="./img/1048953.png" class="img-fluid" alt="Photo 2">
+                <b>Durée de la formation</b>
+                <p>2 ans</p>
+            </div>
+            <div class="col-md-2">
+                <img src="./img/9420552.png" class="img-fluid" alt="Photo 3">
+                <b>Rythme</b>
+                <p>Temps plein ou alternance</p>
+            </div>
+            <div class="col-md-2">
+                <img src="./img/diplome.png" class="img-fluid" alt="Photo 4">
+                <b>Diplôme visé</b>
+                <p>BTS Négociation et Digitalisation de la Relation Client, niveau BAC+2</p>
+            </div>
+            <div class="col-md-2">
+                <img src="./img/adreesse.png" class="img-fluid" alt="Photo 5">
+                <b>A qui s'adresse-t-il ?</b>
+                <p>Aux titulaires d’un baccalauréat ou équivalent souhaitant se spécialiser dans la relation client et la négociation.</p>
+            </div>
+            <div class="col-md-2">
+                <img src="./img/handicap.png" class="img-fluid" alt="Photo 6">
+                <b>Accessibilité PSH</b>
+                <p>Personnes en Situation de Handicap, nous contacter pour des aménagements spécifiques.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container bref">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-info" role="alert">
+                        <h4 class="alert-heading">Passionné par la négociation et la relation client ?</h4>
+                        <p>
+                            Le BTS Négociation et Digitalisation de la Relation Client vous prépare à gérer et optimiser les interactions clients tout en utilisant les outils numériques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+        <div class="row">
+            <div class="col">
+                <h2><span>LE</span> DIPLÔME</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li>Cette formation vous permet d’obtenir :</li>
+                    <li>Le BTS Négociation et Digitalisation de la Relation Client, niveau BAC+2.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="./img/imagessss.png" class="img1" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <b>Modalités de validation</b>
+                <ul>
+                    <li>Le BTS NDRC est organisé autour de plusieurs modules :</li>
+                    <li>Négociation commerciale et relation client ;</li>
+                    <li>Gestion de la relation client dans un contexte digital ;</li>
+                    <li>Analyse et gestion des performances commerciales ;</li>
+                    <li>Développement de la relation client à distance.</li>
+                </ul>
+                <p>Les modules sont validés par des examens et des projets pratiques.</p>
+                <p>Le diplôme est attribué après la réussite de tous les modules et la présentation d'un projet de fin d’études.</p>
+            </div>
+        </div>
+        <div class="click">
+            <button><a href="">Consultez le référentiel</a></button>
+        </div>
+    </div>
+    
+    <div class="container bref">
+        <div class="row">
+            <div class="col">
+                <h2><span>LA</span> FORMATION EN BREF</h2> 
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row justify-content-between">
+                <div class="col-lg-8 col-md-8 col-sm-12 mb-4">
+                    <img src="./img/etudents.png" class="img1 img-fluid" alt="Étudiants">
+                    <ul class="list mt-3">
+                       <b><li>Formation en temps plein ou alternance</li></b>
+                       <b><li>Horaires : Variable selon le rythme choisi</li></b>
+                       <b><li>Lieu : Distanciel et en présentiel</li></b>
+                       <b><li>Tarif : Selon le statut de l’apprenant</li></b>
+                       <b><li>Rémunération : Selon les accords de formation en alternance</li></b>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-12">
+                    <div class="contimg">
+                        <img src="./img/etudirnt1.png" class="img2 img-fluid" alt="Étudiants 2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .img1, .img2 {
+            border-radius: 8px;
+        }
+        .list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        .list a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .list a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .contimg {
+    background: linear-gradient(135deg, #007bff, #ff0000);
+    border: 1px solid #020807;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+    <div class="container prog">
+        <div class="row">
+            <div class="col">
+                <h2><span>LE</span> PROGRAMME</h2> 
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-lg-8 col-md-8 col-sm-12 li">
+                <div class="bttn">
+                    <button id="button1" class="bt"><h5>ENSEIGNEMENT GÉNÉRAL</h5></button>
+                    <button id="button2" class="bt"><h5>ENSEIGNEMENT PROFESSIONNEL</h5></button>
+                </div>
+                <br>
+                <ul id="list1" class="list_1">
+                    <b><li>Culture générale et expression</li></b>
+                    <b><li>Langue vivante anglaise</li></b>
+                    <b><li>Économie et droit</li></b>
+                </ul>
+                <ul id="list2" class="list_2">
+                    <b><li>Négociation commerciale</li></b>
+                    <b><li>Digitalisation de la relation client</li></b>
+                    <b><li>Gestion des interactions clients à distance</li></b>
+                    <b><li>Analyse des performances commerciales</li></b>
+                </ul>
+                <div class="btnnn">
+                    <br>
+                    <button><a href="">Programme détaillé</a></button>
+                </div>
+                <br>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-10">
+                <div class="contimg">
+                    <img src="./img/girl.png" class="img2" width="100%" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container bref">
+        <div class="contimg">
+            <div class="col">
+                <center><h2><span>LA</span> FORMATION EN BREF</h2></center>   
+            </div>
+            <img src="./img/cercle image .png" class="img2" width="100%" alt="">
+        </div>
+    </div>
+    
+    <div class="container bref">
+        <div class="contimg">
+            <div class="col">
+                <center><h2><span>AD</span>MISSIONS</h2></center>   
+            </div><br><br>
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center img-container">
+                <div class="col-md-4 col-lg-4 col-sm-12 text-center mb-4">
+                    <img src="./img/book.png" class="img-fluid" alt="Photo 1" style="width: 150px; height: auto;">
+                    <b>1. Envoi du dossier de candidature</b>
+                    <p>Envoyez votre dossier de candidature pour le BTS NDRC.</p>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 text-center mb-4">
+                    <img src="./img/pen.png" class="img-fluid" alt="Photo 2" style="width: 150px; height: auto;">
+                    <b>2. Examen d'admission</b>
+                    <p>Test de compétences en négociation et gestion de la relation client.</p>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 text-center mb-4">
+                    <img src="./img/entretien.png" class="img-fluid" alt="Photo 3" style="width: 150px; height: auto;">
+                    <b>3. Entretien d'admission</b>
+                    <p>Évaluation de votre motivation et de votre projet professionnel.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+ 
+ </div>
+ <script>
+    var button1 = document.getElementById("button1");
+    var button2 = document.getElementById("button2");
+    var list1 = document.getElementById("list1");
+    var list2 = document.getElementById("list2");
+
+    button1.addEventListener("click", function() {
+        list1.style.display = "block";
+        list2.style.display = "none";
+        list1.style.border="1px solid black";
+        button1.style.border = "1px solid black";
+        list2.style.border="none";
+        button2.style.border = "none";
+    });
+
+    button2.addEventListener("click", function() {
+        list1.style.display = "none";
+        list2.style.display = "block";
+        list2.style.border="1px solid black";
+        button2.style.border = "1px solid black";
+        list1.style.border="none";
+        button1.style.border = "none";
+    });
+</script>
+           
+<section class="sec6">
+    <div class="container-fluid">
+        <div class="txt">
+            
+        <div class="row">
+            <div class="col">
+                <center>
+                <h3>Je veux me former avec ETIC ACADEMY</h3>
+                <h5>Je souhaite connaitre les programmes et les prix des formations</h5>
+            </center>
+            </div>
+            
+        </div>
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Formulaire de Contact</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>
+                .container-fluid {
+                    padding: 30px;
+                }
+                .form {
+                    background-color: #f8f9fa;
+                    padding: 20px;
+                    border-radius: 8px;
+                }
+                .btn1 {
+                    display: flex;
+                    align-items: center;
+                }
+                .btn1 svg {
+                    margin-left: 5px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <center>
+                            <div class="form">
+                                <form id="contact-form" class="row justify-content-around g-3">
+                                    <div class="col-sm-12 col-md-3 col-lg-3">
+                                        <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Votre nom... *" required>
+                                    </div>
+                                    
+                                    <div class="col-sm-12 col-md-3 col-lg-3">
+                                        <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="Votre adresse email *" required>
+                                    </div>
+                                  
+                                    <div class="col-sm-12 col-md-3 col-lg-3">
+                                        <button type="submit" class="btn btn-primary btn1">
+                                            Oui, merci
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        
+            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+            <script>
+                (function() {
+                    emailjs.init("Tpj1wThy5wxMNYaVq"); // Remplacez par votre ID utilisateur EmailJS
+                })();
+        
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+        
+                    // Remplacez par les IDs de votre service et modèle EmailJS
+                    const serviceID = 'service_0655p1j'; // Remplacez par l'ID de votre service
+                    const templateID = 'template_d8h7gam'; // Remplacez par l'ID de votre modèle
+        
+                    emailjs.sendForm(serviceID, templateID, this)
+                        .then((response) => {
+                            console.log('Success:', response);
+                            alert('Votre message a été envoyé avec succès!');
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                            alert('Erreur lors de l\'envoi de votre message.');
+                        });
+                });
+            </script>
+        </body>
+        </html>
+    
+        <div class="row">
+            <center>
+            <div class="col">
+                <p>En recevant nos programmes , vous consentez à ce qu'ETIC ACADEMY collecte vos données de vous envoyer des <br>
+                communications par voie électronique. Vouspourrez vous désabonner à tout moment.Consultez notre politique de <br>
+                confidentialité afin d'en savoir plus.</p>
+            </div>
+        </center>
+        </div>
+    </div>
+    </div>
+</section>
+    <!--footer-->
+    <div class="container-fluid footer">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 order-md-1 footer-col footer-logo">
+                        <img src="./img/logo.png" alt="Your Logo" class="img-fluid">
+                    </div>
+                    <!-- Second column with text and icons -->
+                    <div class="col-md-3 order-md-2 footer-col">
+                        <h4>Informations</h4>
+                        <p>Etudiant</p>
+                        <p>Étudiants étrangers</p>
+                        <p>Dépôt de candidature</p>
+                        <p>
+                            <span class="icon-container"><i class="fas fa-phone phone-icon"></i></span>
+                            +033 4 78 54 50 03
+                        </p>
+                        <p>
+                            <span class="icon-container"><i class="fab fa-whatsapp whatsapp-icon"></i></span>
+                            +033 7 69 71 96 01
+                        </p>
+                    </div>
+    
+                    <!-- Third column with text -->
+                    <div class="col-md-3 order-md-3 footer-col">
+                        <h4>Nos Formations</h4>
+                        <p>Pôle Informatique</p>
+                        <p>Pôle Commerciale</p>
+                        <p><span class="icon-container"><i class="fas fa-envelope gmail-icon"></i></span>conseillers@etic-academy.com</p>
+                    </div>
+    
+                    <!-- Fourth column with logos -->
+                    <div class="col-md-3 order-md-4 footer-col fourth-column d-flex flex-column align-items-center">
+                        <img src="./img/ppppp.png" alt="Logo 1" class="img-fluid">
+                        <img src="./img/fo2.jpg" alt="Logo 1" class="img-fluid">
+                        <img src="./img/fot3.jpg" alt="Logo 2" class="img-fluid">
+                    </div>
+    
+                    <!-- First column with logo -->
+                 
+                </div>
+            </div>
+    
+            <!-- Blue banner at the bottom -->
+       
+            <style>
+                .icon-container {
+                    font-size: 30px;
+                    cursor: pointer;
+                    color: #000;
+                    margin: 0 10px;
+                }
+        
+                .blue-banner {
+                    text-align: center;
+                    background-color: #007BFF;
+                    color: white;
+                    padding: 20px;
+                    position: relative;
+                }
+        
+                .social-icons {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-top: 10px;
+                }
+        
+                .chat-popup {
+                    display: none;
+                    position: fixed;
+                    bottom: 70px;
+                    right: 20px;
+                    width: 300px;
+                    background-color: #f1f1f1;
+                    border: 1px solid #888;
+                    border-radius: 10px;
+                    z-index: 9;
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                }
+        
+                .chat-header {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 10px 10px 0 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+        
+                .chat-body {
+                    max-height: 300px;
+                    overflow-y: auto;
+                    padding: 10px;
+                    background-color: white;
+                }
+        
+                .close-btn {
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+        
+                input[type="text"] {
+                    width: calc(100% - 70px);
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    margin: 10px;
+                }
+        
+                button#sendBtn {
+                    padding: 10px;
+                    border: none;
+                    background-color: #0e5be9;
+                    color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            </style>
+        </head>
+        <body>
+        
+            <div class="blue-banner" style="text-align: center;">
+                <a href="#" class="icon-container" id="chatbotButton"><i class="fas fa-comment"></i></a>
+                Tous droits réservés à ETIC ACADEMY - Site web réalisé par IGLOOHUB
+                <div class="social-icons" style="justify-content: flex-start; align-items: center;">
+                    <span style="margin-right: 10px;">Suivez-nous :</span>
+                    <!-- Icônes de réseaux sociaux -->
+                    <a href="#" class="icon-container"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="icon-container"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="icon-container"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        
+            <!-- Popup du chatbot -->
+            <div id="chatPopup" class="chat-popup">
+                <div class="chat-header">
+                    <h4>Chatbot Etic Academy</h4>
+                    <button id="closeChat" class="close-btn">&times;</button>
+                </div>
+                <div id="chatBody" class="chat-body">
+                    <!-- Messages du chatbot apparaîtront ici -->
+                </div>
+                <input type="text" id="userInput" placeholder="Posez votre question...">
+                <button id="sendBtn">Envoyer</button>
+            </div>
+        
+            <script>
+                // Afficher le popup de chat
+                document.getElementById("chatbotButton").onclick = function() {
+                    document.getElementById("chatPopup").style.display = "block";
+                };
+        
+                // Fermer le popup de chat
+                document.getElementById("closeChat").onclick = function() {
+                    document.getElementById("chatPopup").style.display = "none";
+                };
+        
+                // Chatbot - Questions et Réponses
+                const chatbotResponses = {
+"formation": "Nous offrons des formations en développement web, design graphique, et marketing digital.",
+"tarif": "Les tarifs varient selon les formations. Pour plus d'informations, contactez-nous directement.",
+"durée": "La durée des formations dépend du programme choisi, généralement entre 3 à 6 mois.",
+"professeur": "Nos professeurs sont des experts dans leur domaine avec plusieurs années d'expérience.",
+"horaire": "Les cours se déroulent du lundi au vendredi, avec des options de cours en journée et en soirée.",
+"inscription": "Vous pouvez vous inscrire directement sur notre site web. Les inscriptions sont ouvertes toute l'année.",
+"diplôme": "À la fin de la formation, vous recevrez un diplôme reconnu par nos partenaires industriels.",
+"stage": "Nous offrons des stages en entreprise à la fin de la formation pour mettre en pratique vos compétences.",
+"projets": "Les étudiants travaillent sur des projets concrets tout au long de la formation, y compris des projets collaboratifs.",
+"modalités de paiement": "Nous offrons plusieurs options de paiement, y compris des paiements échelonnés.",
+"remboursement": "Les remboursements sont possibles sous certaines conditions, veuillez consulter notre politique de remboursement pour plus de détails.",
+"partenaires": "Nous collaborons avec plusieurs entreprises pour offrir des opportunités de stage et d'emploi à nos étudiants.",
+"admission": "L'admission se fait sur la base d'un dossier de candidature et, dans certains cas, d'un entretien.",
+"aide financière": "Nous offrons des bourses et des aides financières pour les étudiants admissibles.",
+"matériel requis": "Un ordinateur portable est requis pour suivre les formations. Les logiciels nécessaires seront fournis.",
+"langue": "Les formations sont dispensées en français, avec des supports de cours disponibles en anglais pour certains programmes.",
+"accompagnement": "Nos mentors vous accompagnent tout au long de votre parcours, avec des sessions de coaching individuel."
+};
+
+        
+                document.getElementById("sendBtn").onclick = function() {
+                    const userInput = document.getElementById("userInput").value.toLowerCase();
+                    let response = "Désolé, je n'ai pas compris votre question. Pouvez-vous reformuler ?";
+        
+                    for (let question in chatbotResponses) {
+                        if (userInput.includes(question)) {
+                            response = chatbotResponses[question];
+                            break;
+                        }
+                    }
+        
+                    // Ajouter la question de l'utilisateur
+                    addMessage("Vous: " + document.getElementById("userInput").value);
+                    
+                    // Ajouter la réponse du chatbot
+                    addMessage("Chatbot: " + response);
+                    
+                    // Effacer le champ d'entrée
+                    document.getElementById("userInput").value = "";
+                };
+        
+                // Fonction pour ajouter un message dans le chat
+                function addMessage(message) {
+                    const chatBody = document.getElementById("chatBody");
+                    const newMessage = document.createElement("div");
+                    newMessage.textContent = message;
+                    chatBody.appendChild(newMessage);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }
+            </script>
+    
+        </footer>
+    </div>
+
+
+
+
+
+ 
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+
+<script>
+$('.carousel .carousel-item').each(function () {
+var minPerSlide = 4;
+var next = $(this).next();
+if (!next.length) {
+next = $(this).siblings(':first');
+}
+next.children(':first-child').clone().appendTo($(this));
+
+for (var i = 0; i < minPerSlide; i++) { next=next.next(); if (!next.length) { next=$(this).siblings(':first'); } next.children(':first-child').clone().appendTo($(this)); } });</script>
+
+    <!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
